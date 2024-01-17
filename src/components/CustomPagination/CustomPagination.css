@@ -1,0 +1,11 @@
+.paginationWrapper {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+}
+
+.paginationContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+}

@@ -1,0 +1,30 @@
+.movieWrapper {
+    padding-top: 80px !important;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.movieContainer {
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+@media screen and (max-width: 700px) {
+    .movieWrapper {
+        padding-top: 50px !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .movieContainer {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .movieContainer {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
