@@ -38,7 +38,9 @@ const Tvseries = () => {
             />
           ))}
       </div>
-      <CustomPagination totalPages={totalPages} setPage={setPage} />
+      {totalPages > 1 && (
+        <CustomPagination totalPages={totalPages} setPage={setPage} />
+      )}
     </div>
   );
 };

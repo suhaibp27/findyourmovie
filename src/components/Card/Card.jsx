@@ -1,11 +1,15 @@
 import { FaStar } from "react-icons/fa";
 import "./Card.css";
-import { img_500 } from "../../config/config";
+import { img_500, unavailable } from "../../config/config";
 
 const Card = ({ title, date, poster_path, rating }) => {
   return (
     <div className="cardContainer">
-      <img className="cardImage" src={`${img_500}${poster_path}`} alt={title} />
+      <img
+        className="cardImage"
+        src={poster_path ? `${img_500}${poster_path}` : unavailable}
+        alt={title}
+      />
       <div className="cardBottom">
         <h3 className="cardTitle">{title}</h3>
         <div className="cardDetails">

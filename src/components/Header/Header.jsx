@@ -35,12 +35,14 @@ const Header = () => {
   return (
     <div className={showNav ? "headerWrapper darkBackground" : "headerWrapper"}>
       <div className="innerWidth headerContainer">
-        <img
-          className="headerLogo"
-          onClick={() => window.scroll(0, 0)}
-          src={netflixLogo}
-          alt="Netflix"
-        />
+        <div className="headerLogo">
+          <h3>
+            <span>F</span>
+            <span>Y</span>
+            <span>M</span>
+          </h3>
+          <p>Find Your Movie</p>
+        </div>
         <div ref={navref} className="headerRight">
           <ul className="headerMenu">
             <li className="headerMenuItem">

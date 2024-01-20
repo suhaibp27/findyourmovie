@@ -22,9 +22,19 @@
 }
 
 .headerLogo {
-    height: 30px;
-    object-fit: contain;
-    cursor: pointer;
+    color: red;
+    line-height: 90%;
+}
+
+.headerLogo h3 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerLogo p {
+    text-transform: uppercase;
+    font-size: 10px;
 }
 
 .headerRight {

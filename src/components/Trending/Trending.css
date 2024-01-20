@@ -1,5 +1,4 @@
 .trendingWrapper {
-    /* min-height: 60vh; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,7 +92,7 @@
     margin-right: 10px !important;
 } */
 
-.trendingButton {
+/* .trendingButton {
     position: absolute;
     top: 40%;
     z-index: 10;
@@ -109,7 +108,7 @@
 
 .trendingNextButton {
     right: 0px;
-}
+} */
 
 @media screen and (max-width: 700px) {
     .trendingCardContainer {
@@ -122,9 +121,9 @@
         gap: 30px;
     }
 
-    .trendingButton {
+    /* .trendingButton {
         top: 25%;
-    }
+    } */
 
     .trendingListItemButton.active::before {
         content: '';

@@ -4,7 +4,12 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "./Hero.css";
 import axios from "axios";
-import { img_1280, img_500 } from "../../config/config";
+import {
+  img_1280,
+  img_500,
+  unavailable,
+  unavailableLandscape,
+} from "../../config/config";
 import { FaPlay, FaPlus, FaStar } from "react-icons/fa";
 import { GrNext, GrPrevious } from "react-icons/gr";
 
@@ -53,8 +58,12 @@ const Hero = () => {
                 className="heroSlideImage"
                 src={
                   isMobile
-                    ? `${img_500}${item.poster_path}`
-                    : `${img_1280}${item.backdrop_path}`
+                    ? item.poster_path
+                      ? `${img_500}${item.poster_path}`
+                      : unavailable
+                    : item.backdrop_path
+                    ? `${img_1280}${item.backdrop_path}`
+                    : unavailableLandscape
                 }
                 alt=""
               />

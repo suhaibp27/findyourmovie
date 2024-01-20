@@ -1,0 +1,24 @@
+.genreContainer {
+    padding-top: 30px !important;
+    display: flex;
+    gap: 15px;
+    overflow-x: scroll;
+}
+
+.genreContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.genreContainer .genre {
+    /* height: 30px; */
+    width: min-content;
+    padding: 3px 8px;
+    border-radius: 15px;
+    background-color: #2C3333;
+    color: white;
+    border: none;
+}
+
+.genreContainer .genre.active {
+    background-color: red;
+}
