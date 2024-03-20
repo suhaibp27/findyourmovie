@@ -83,6 +83,7 @@
 .heroCardButton {
     display: flex;
     align-items: center;
+    gap: 10px;
     font-size: 14px;
     height: 36px;
     padding: 5px 10px;
@@ -90,7 +91,7 @@
     border: none;
     background-color: #040D12;
     color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .heroCardButton:hover {
@@ -106,9 +107,9 @@
     color: red;
 }
 
-.heroIcon {
+/* .heroIcon {
     margin-right: 5px;
-}
+} */
 
 @media screen and (max-width: 700px) {
     .heroPrevButton {

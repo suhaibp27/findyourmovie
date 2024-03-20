@@ -31,6 +31,8 @@ const Movies = () => {
           content.map((item) => (
             <Card
               key={item.id}
+              id={item.id}
+              media_type="movie"
               title={item.title || item.name}
               date={item.release_date || item.first_air_date}
               poster_path={item.poster_path}

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.css";
 import netflixLogo from "../../assets/Netflix-logo.png";
 import netflixAvatar from "../../assets/Netflix-avatar.png";
@@ -35,14 +35,16 @@ const Header = () => {
   return (
     <div className={showNav ? "headerWrapper darkBackground" : "headerWrapper"}>
       <div className="innerWidth headerContainer">
-        <div className="headerLogo">
-          <h3>
-            <span>F</span>
-            <span>Y</span>
-            <span>M</span>
-          </h3>
-          <p>Find Your Movie</p>
-        </div>
+        <Link to="/" onClick={handleClose} className="headerLink">
+          <div className="headerLogo">
+            <h3>
+              <span>F</span>
+              <span>Y</span>
+              <span>M</span>
+            </h3>
+            <p>Find Your Movie</p>
+          </div>
+        </Link>
         <div ref={navref} className="headerRight">
           <ul className="headerMenu">
             <li className="headerMenuItem">

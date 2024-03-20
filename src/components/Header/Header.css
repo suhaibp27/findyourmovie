@@ -21,6 +21,11 @@
     color: #fff;
 }
 
+.headerLink {
+    text-decoration: none;
+    color: inherit;
+}
+
 .headerLogo {
     color: red;
     line-height: 90%;

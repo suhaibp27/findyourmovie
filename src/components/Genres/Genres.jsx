@@ -11,7 +11,7 @@ const Genres = ({ type, setGenreforURL, setPage }) => {
       }&language=en-US`
     );
     setGenres(data.genres);
-    console.log(data.genres);
+    // console.log(data.genres);
   };
 
   useEffect(() => {

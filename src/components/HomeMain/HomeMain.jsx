@@ -67,6 +67,11 @@ const HomeMain = () => {
     setContent(data.results);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchSearch();
+  };
+
   useEffect(() => {
     fetchSearch();
   }, [type]);
@@ -129,6 +134,8 @@ const HomeMain = () => {
               content.map((item) => (
                 <Card
                   key={item.id}
+                  id={item.id}
+                  media_type={selected}
                   title={item.title || item.name}
                   date={item.release_date || item.first_air_date}
                   poster_path={item.poster_path}
@@ -150,17 +157,17 @@ const HomeMain = () => {
       )}
       {selected === "search" && (
         <div className="innerWidth homeMainSearch">
-          <div className="homeMainSearchForm">
+          <form className="homeMainSearchForm" onSubmit={handleSubmit}>
             <input
               type="text"
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
               placeholder="Search..."
             />
-            <button onClick={fetchSearch}>
+            <button type="submit">
               <FiSearch />
             </button>
-          </div>
+          </form>
           <div className="homeMainSearchType">
             <button
               onClick={() => setType("movie")}
@@ -176,18 +183,19 @@ const HomeMain = () => {
             </button>
           </div>
           <div className="homeMainSearchContainer">
-            {searchText &&
-              content.length == 0 &&
+            {content.length == 0 &&
               (type === "movie" ? (
                 <h2>No Movies Found</h2>
               ) : (
                 <h2>No Series Found</h2>
               ))}
             <div className="homeMainSearchContents">
-              {content.length > 0 &&
+              {content &&
                 content.map((item) => (
                   <Card
                     key={item.id}
+                    id={item.id}
+                    media_type={type}
                     title={item.title || item.name}
                     date={item.release_date || item.first_air_date}
                     poster_path={item.poster_path}

@@ -10,10 +10,12 @@ import {
   unavailable,
   unavailableLandscape,
 } from "../../config/config";
-import { FaPlay, FaPlus, FaStar } from "react-icons/fa";
+import { FaPlus, FaStar } from "react-icons/fa";
 import { GrNext, GrPrevious } from "react-icons/gr";
+import CardModal from "../Card/CardModal";
 
 const Hero = () => {
+  const [showModal, setShowModal] = useState(false);
   const [content, setContent] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -27,6 +29,17 @@ const Hero = () => {
     // console.log(data.results.slice(0, 5));
 
     setContent(data.results.slice(0, 5));
+
+    // data.results.slice(0, 5).map(async (item) => {
+    //   console.log(item.media_type);
+    //   const { videoData } = await axios.get(
+    //     `https://api.themoviedb.org/3/${item.media_type}/${
+    //       item.id
+    //     }/videos?api_key=${import.meta.env.VITE_API_KEY}&language=en-US`
+    //   );
+
+    //   console.log(videoData);
+    // });
   };
 
   const handleWindowResize = () => {
@@ -78,8 +91,12 @@ const Hero = () => {
                 <h3 className="heroTitle">{item.title || item.name}</h3>
                 <p className="heroDescription">{item.overview}</p>
                 <div className="heroCardButtonConatainer">
-                  <button className="heroCardButton heroCardButtonPrimary">
-                    <FaPlay className="heroIcon" /> WATCH TRAILER
+                  <button
+                    className="heroCardButton heroCardButtonPrimary"
+                    onClick={() => setShowModal(true)}
+                  >
+                    <FaPlus className="heroIcon" /> VIEW MORE
+                    {/* <FaPlay className="heroIcon" /> */}
                   </button>
                   <button className="heroCardButton">
                     <FaPlus className="heroIcon" /> ADD LIST
@@ -87,6 +104,13 @@ const Hero = () => {
                 </div>
               </div>
             </div>
+            {showModal && (
+              <CardModal
+                id={item.id}
+                media_type={item.media_type}
+                setShowModal={setShowModal}
+              />
+            )}
           </SwiperSlide>
         ))}
       </Swiper>

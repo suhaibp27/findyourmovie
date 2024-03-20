@@ -22,6 +22,11 @@ const Search = () => {
     setContent(data.results);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchSearch();
+  };
+
   useEffect(() => {
     fetchSearch();
   }, [page, type]);
@@ -29,17 +34,17 @@ const Search = () => {
     <div className="searchWrapper">
       <h1 className="pageTitle">Search</h1>
       <div className="innerWidth homeMainSearch">
-        <div className="homeMainSearchForm">
+        <form className="homeMainSearchForm" onSubmit={handleSubmit}>
           <input
             type="text"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
             placeholder="Search..."
           />
-          <button onClick={fetchSearch}>
+          <button type="submit">
             <FiSearch />
           </button>
-        </div>
+        </form>
         <div className="homeMainSearchType">
           <button
             onClick={() => setType("movie")}
@@ -67,6 +72,8 @@ const Search = () => {
               content.map((item) => (
                 <Card
                   key={item.id}
+                  id={item.id}
+                  media_type={type}
                   title={item.title || item.name}
                   date={item.release_date || item.first_air_date}
                   poster_path={item.poster_path}
