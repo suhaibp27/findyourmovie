@@ -40,7 +40,7 @@ This is a responsive React application created using Vite that fetches data from
 ## Credits
 
 - TMDB API: [https://www.themoviedb.org/documentation/api](https://www.themoviedb.org/documentation/api)
-- React: [https://reactjs.org/](https://reactjs.org/)
+- React: [https://react.dev/](https://react.dev/)
 - Vite: [https://vitejs.dev/](https://vitejs.dev/)
 - React Router: [https://reactrouter.com/](https://reactrouter.com/)
 - React Icons: [https://react-icons.github.io/react-icons/](https://react-icons.github.io/react-icons/)
